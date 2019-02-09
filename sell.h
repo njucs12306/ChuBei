@@ -1,5 +1,7 @@
+#pragma once
 #include<iostream>
 using namespace std;
 void sellList();
-void view();
-void returnTicket();
+void view(Order* h);
+void returnTicket(Order* h);
+extern Order* orderh;

@@ -74,9 +74,9 @@ void sell()
 		{
 			switch (num4)
 			{
-			case 1:cout << "你已选择“售票”功能\n\n"; break;
-			case 2:cout << "你已选择“订单浏览”功能\n\n"; break;
-			case 3:cout << "你已选择“退票”功能\n\n"; break;
+			case 1:cout << "你已选择“售票”功能\n\n"; sellList(); break;
+			case 2:cout << "你已选择“订单浏览”功能\n\n"; view(orderh); break;
+			case 3:cout << "你已选择“退票”功能\n\n"; returnTicket(orderh); break;
 			default:cout << "输入错误，请重新选择服务\n\n";
 			}
 		}
@@ -101,7 +101,7 @@ void save()
 			switch (num2)
 			{
 			case 1:cout << "你已选择“输出火车信息”功能\n\n"; output_train(head); break;
-			case 2:cout << "你已选择“输出订单信息”功能\n\n"; output_order(head); break;
+			case 2:cout << "你已选择“输出订单信息”功能\n\n"; output_order(orderh); break;
 			default:cout << "输入错误，请重新选择服务\n\n";
 			}
 		}

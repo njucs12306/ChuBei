@@ -1,7 +1,7 @@
 #include<iostream>
 #include"struct.h"
 using namespace std;
-extern Train* head = NULL;
+Train* head;
 void print(Train* h)
 {
 	for (Train* p = h->next; p != NULL; p = p->next)

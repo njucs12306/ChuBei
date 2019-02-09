@@ -90,7 +90,15 @@ void output_train(Train* h)									//输出火车信息
 	cout << "火车信息输出成功！\n";
 	cout << endl;
 }
-void output_order(Train* h)											//输出订单
+void output_order(Order* h)											//输出订单
 {
-	;
+	outfile.open("ORDER.txt");
+	outfile << "订单号\t" << "车次\t" << "出发站\t   " << "到达站\t" << "票数\n";
+	for (Order* p = h->next; p != NULL; p = p->next)
+	{
+		outfile << p->NO << "\t" << p->num << "\t" << p->first << "\t   " << p->last << "\t" << p->count << endl;
+	}
+	outfile.close();
+	cout << "订单信息输出成功！\n";
+	cout << endl;
 }
