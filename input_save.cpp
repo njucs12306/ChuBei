@@ -3,10 +3,9 @@
 #include<fstream>
 #include"struct.h"
 using namespace std;
-ifstream infile;
-ofstream outfile;
 Train* createList()
 {
+	ifstream infile;
 	Train* head = new Train;
 	head->num[0] = head->num[1] = head->num[2] = 'F';
 	head->next = NULL;
@@ -51,6 +50,7 @@ Train* createList()
 }
 void input()
 {
+	ifstream infile;
 	cout << "请输入文件名：";
 	char filename[20];
 	cin >> filename;
@@ -70,6 +70,7 @@ void input()
 }
 void output_train(Train* h)									//输出火车信息
 {
+	ofstream outfile;
 	outfile.open("finish.txt");
 	for (Train* p = h->next; p != NULL; p = p->next)
 	{
@@ -92,6 +93,7 @@ void output_train(Train* h)									//输出火车信息
 }
 void output_order(Order* h)											//输出订单
 {
+	ofstream outfile;
 	outfile.open("ORDER.txt");
 	outfile << "订单号\t" << "车次\t" << "出发站\t   " << "到达站\t" << "票数\n";
 	for (Order* p = h->next; p != NULL; p = p->next)

@@ -4,7 +4,6 @@
 #include "input_save.h"
 #include"main_menu.h"
 using namespace std;
-
 int main()
 {
 	init_main();

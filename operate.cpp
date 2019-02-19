@@ -1,6 +1,7 @@
 #include<iostream>
 #include<cstring>
 #include"struct.h"
+#include"sell.h"
 using namespace std;
 
 void addList(Train* h)												//添加/修改班次
@@ -134,15 +135,31 @@ void deleteList(Train* h) 											//删除班次
 		cout << "该班次不存在！\n\n";
 	else if (p->next == NULL)
 	{
-		pre->next = NULL;
-		delete p;
-		cout << "删除成功！\n\n";
+		Order* q = orderh->next;
+		while (q != NULL && strcmp(q->num, p->num))
+			q = q->next;
+		if (q != NULL)
+			cout << "该班次有乘客购票，无法删除！\n\n";
+		else
+		{
+			pre->next = NULL;
+			delete p;
+			cout << "删除成功！\n\n";
+		}
 	}
 	else
 	{
-		pre->next = p->next;
-		delete p;
-		cout << "删除成功！\n\n";
+		Order* q = orderh->next;
+		while (q != NULL && strcmp(q->num, p->num))
+			q = q->next;
+		if (q != NULL)
+			cout << "该班次有乘客购票，无法删除！\n\n";
+		else
+		{
+			pre->next = p->next;
+			delete p;
+			cout << "删除成功！\n\n";
+		}
 	}
 	print(head);
 }
